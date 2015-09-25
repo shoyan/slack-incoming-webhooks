@@ -40,6 +40,7 @@ slack = Slack::Incoming::Webhooks.new "WEBHOOK_URL", channel: '#other-channel',
 ```
 
 Once a notifier has been initialized, you can update the default channel or username or attachments .
+
 ```ruby
 slack.channel  = '#other-channel'
 slack.username = 'monkey-bot'
@@ -69,6 +70,23 @@ or setting defaults.
 ```ruby
 slack = Slack::Incoming::Webhooks.new "WEBHOOK_URL", attachments: [attachments]
 slack.post "with an attachment"
+```
+
+or attachments method.
+
+```ruby
+slack.attachments = { color: '#36a64f', title: 'Slack API Documentation' }
+```
+## Console
+run `bin/console` for an interactive prompt that will allow you to experiment.
+
+```bash
+$ bin/console
+
+[1] pry(main)> slack = Slack::Incoming::Webhooks.new "WEBHOOK_URL"
+=> #<Slack::Incoming::Webhooks:0x007fae6b871e48
+[2] pry(main)> slack.post "Hello world!"
+=> #<Net::HTTPOK 200 OK readbody=true>
 ```
 
 ## Development
