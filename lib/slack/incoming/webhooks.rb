@@ -10,11 +10,11 @@ module Slack
       include Connection
       include Request
 
-      attr_accessor :webhook_url, :payload
+      attr_accessor :webhook_url
 
-      def initialize(webhook_url, payload={})
+      def initialize(webhook_url, options={})
         @webhook_url = webhook_url
-        @payload     = payload
+        options.each { |key, val| send("#{key}=", val) }
       end
     end
   end

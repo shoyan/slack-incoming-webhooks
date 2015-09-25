@@ -9,12 +9,21 @@ describe Slack::Incoming::Webhooks do
 
   describe "#initialize" do
     it "sets the given webhook_url" do
-      expect( subject.webhook_url).to eq 'http://example.com'
+      expect( subject.webhook_url ).to eq 'http://example.com'
+    end
+
+    it "returns default payload" do
+      expect( subject.payload ).to be {}
     end
 
     it "sets the payload options" do
       subject = described_class.new 'http://example.com', channel: 'foo'
-      expect( subject.payload).to eq channel: 'foo'
+      expect( subject.payload ).to eq channel: 'foo'
+    end
+
+    it "sets the attachments options" do
+      subject = described_class.new 'http://example.com', attachments: [{ color: 'foo', text: 'sample' }]
+      expect( subject.payload ).to eq attachments: [{ color: 'foo', text: 'sample' }]
     end
   end
 
@@ -34,7 +43,7 @@ describe Slack::Incoming::Webhooks do
 
   describe "#attachments=" do
     it "sets the given attachments" do
-      subject.attachments= { color: "good", text: "sample" }
+      subject.attachments= [{ color: "good", text: "sample" }]
       expect( subject.attachments ).to eq [{color: "good", text: "sample"}]
     end
   end

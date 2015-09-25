@@ -1,28 +1,28 @@
 module Slack
   module Incoming
     module Configuration
-      def channel
-        payload[:channel]
-      end
+      VALID_OPTIONS_KEYS = [
+        :token,
+        :channel,
+        :text,
+        :username,
+        :attachments,
+        :as_user,
+        :parse,
+        :link_names,
+        :unfurl_links,
+        :unfurl_media,
+        :icon_url,
+        :icon_emoji
+      ].freeze
 
-      def channel= channel
-        payload[:channel] = channel
-      end
+      attr_accessor(*VALID_OPTIONS_KEYS)
 
-      def username
-        payload[:username]
-      end
-
-      def username= username
-        payload[:username] = username
-      end
-
-      def attachments
-        payload[:attachments]
-      end
-
-      def attachments= attachments
-        payload[:attachments] = [attachments]
+      def payload
+        VALID_OPTIONS_KEYS.inject({}) do |o, k|
+          o.merge!(k => send(k)) unless send(k).nil?
+          o
+        end
       end
     end
   end
