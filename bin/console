@@ -11,4 +11,5 @@ require "slack/incoming/webhooks"
 # Pry.start
 
 require "pry"
+require "awesome_print"
 Pry.start
