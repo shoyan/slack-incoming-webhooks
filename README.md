@@ -2,7 +2,7 @@
 A simple wrapper for posting to slack.
 
 ## Example
-```
+```ruby
 require 'slack-incoming-webhooks'
 
 slack = Slack::Incoming::Webhooks.new "WEBHOOK_URL"
@@ -31,7 +31,7 @@ Or install it yourself as:
 ## Usage
 
 ### Setting Defaults
-On initialization you can set default payloads by passing an options hash.
+On initialization you can set default payloads by passing an options hash.  
 Options please refer to [incoming-webhooks](https://api.slack.com/incoming-webhooks).
 
 ```ruby
@@ -48,7 +48,7 @@ slack.attachments = { color: '#36a64f',  title: 'Slack API Documentation' }
 ```
 
 ### Attachments
-It is possible to create more richly-formatted messages using [Attachments](https://api.slack.com/docs/attachments).
+It is possible to create more richly-formatted messages using [Attachments](https://api.slack.com/docs/attachments).  
 slack-incoming-webhooks supports Attachments.
 
 ```ruby
