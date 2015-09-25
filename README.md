@@ -1,4 +1,6 @@
 # Slack::Incoming::Webhooks
+[![Build Status](https://travis-ci.org/shoyan/slack-incoming-webhooks.svg)](https://travis-ci.org/shoyan/slack-incoming-webhooks)
+
 A simple wrapper for posting to slack.
 
 ## Example
