@@ -1,8 +1,16 @@
 # Slack::Incoming::Webhooks
+A simple wrapper for posting to slack.
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/slack/incoming/webhooks`. To experiment with that code, run `bin/console` for an interactive prompt.
+## Example
+```
+require 'slack-incoming-webhooks'
 
-TODO: Delete this and the text above, and describe your gem
+slack = Slack::Incoming::Webhooks.new "WEBHOOK_URL"
+slack.post "Hello World"
+
+# => if your webhook is setup, will message "Hello World"
+# => to the default channel you set in slack
+```
 
 ## Installation
 
@@ -22,7 +30,46 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Setting Defaults
+On initialization you can set default payloads by passing an options hash.
+Options please refer to [incoming-webhooks](https://api.slack.com/incoming-webhooks).
+
+```ruby
+slack = Slack::Incoming::Webhooks.new "WEBHOOK_URL", channel: '#other-channel',
+                                                     username: 'monkey-bot'
+```
+
+Once a notifier has been initialized, you can update the default channel or username or attachments .
+```ruby
+slack.channel  = '#other-channel'
+slack.username = 'monkey-bot'
+slack.attachments = { color: '#36a64f',  title: 'Slack API Documentation' }
+```
+
+### Attachments
+It is possible to create more richly-formatted messages using [Attachments](https://api.slack.com/docs/attachments).
+slack-incoming-webhooks supports Attachments.
+
+```ruby
+attachments = {
+  fallback: "Required plain-text summary of the attachment.",
+  color: "#36a64f",
+  pretext: "Optional text that appears above the attachment block",
+  title: "Slack API Documentation",
+  title_link: "https://api.slack.com/",
+  text: "Optional text that appears within the attachment",
+  image_url: "http://my-website.com/path/to/image.jpg"
+}
+
+slack.post "with an attachment", attachments: [attachments]
+```
+
+or setting defaults.
+
+```ruby
+slack = Slack::Incoming::Webhooks.new "WEBHOOK_URL", attachments: [attachments]
+slack.post "with an attachment"
+```
 
 ## Development
 
