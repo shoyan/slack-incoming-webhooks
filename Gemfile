@@ -7,3 +7,7 @@ group :development, :test do
   gem 'awesome_print'
   gem 'pry'
 end
+
+group :test do
+  gem 'rspec', '~> 3.3.0'
+end
