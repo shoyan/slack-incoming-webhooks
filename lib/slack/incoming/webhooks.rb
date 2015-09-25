@@ -1,3 +1,4 @@
+require "slack/incoming/webhooks/configuration"
 require "slack/incoming/webhooks/connection"
 require "slack/incoming/webhooks/request"
 require "slack/incoming/webhooks/version"
@@ -5,6 +6,7 @@ require "slack/incoming/webhooks/version"
 module Slack
   module Incoming
     class Webhooks
+      include Configuration
       include Connection
       include Request
 
