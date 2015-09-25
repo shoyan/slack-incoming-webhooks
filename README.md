@@ -32,19 +32,20 @@ Or install it yourself as:
 
 ### Setting Defaults
 On initialization you can set default payloads by passing an options hash.  
-Options please refer to [incoming-webhooks](https://api.slack.com/incoming-webhooks).
+Options please refer to [incoming-webhooks](https://api.slack.com/incoming-webhooks) and [chat.postMessage](https://api.slack.com/methods/chat.postMessage).
+.
 
 ```ruby
 slack = Slack::Incoming::Webhooks.new "WEBHOOK_URL", channel: '#other-channel',
                                                      username: 'monkey-bot'
 ```
 
-Once a notifier has been initialized, you can update the default channel or username or attachments .
+Once a notifier has been initialized, you can update the default channel or username or attachments or etc.
 
 ```ruby
 slack.channel  = '#other-channel'
 slack.username = 'monkey-bot'
-slack.attachments = { color: '#36a64f',  title: 'Slack API Documentation' }
+slack.attachments = [{ color: '#36a64f',  title: 'Slack API Documentation' }]
 ```
 
 ### Attachments
@@ -75,7 +76,7 @@ slack.post "with an attachment"
 or attachments method.
 
 ```ruby
-slack.attachments = { color: '#36a64f', title: 'Slack API Documentation' }
+slack.attachments = [{ color: '#36a64f', title: 'Slack API Documentation' }]
 ```
 ## Console
 run `bin/console` for an interactive prompt that will allow you to experiment.
