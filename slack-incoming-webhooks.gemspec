@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Shohei Yamasaki"]
   spec.email         = ["s-yamasaki@pepabo.com"]
 
-  spec.summary       = %q{A simple wrapper for posting to slack incoming webhooks}
-  spec.description   = %q{A simple wrapper for posting to slack incoming webhooks}
+  spec.summary       = %q{A simple wrapper for posting to slack.}
+  spec.description   = %q{A simple wrapper for posting to slack.}
   spec.homepage      = "https://github.com/shoyan/slack-incoming-webhooks"
   spec.license       = "MIT"
 
