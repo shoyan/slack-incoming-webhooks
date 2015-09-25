@@ -1,6 +1,6 @@
 module Slack
   module Incoming
-    module Webhooks
+    class Webhooks
       VERSION = "0.1.0"
     end
   end
