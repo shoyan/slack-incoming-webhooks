@@ -5,7 +5,7 @@ A simple wrapper for posting to slack.
 
 ## Example
 ```ruby
-require 'slack-incoming-webhooks'
+require 'slack/incoming/webhooks'
 
 slack = Slack::Incoming::Webhooks.new "WEBHOOK_URL"
 slack.post "Hello World"
