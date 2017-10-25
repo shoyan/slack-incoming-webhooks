@@ -1,7 +1,7 @@
 # Slack::Incoming::Webhooks
 [![Build Status](https://travis-ci.org/shoyan/slack-incoming-webhooks.svg)](https://travis-ci.org/shoyan/slack-incoming-webhooks)
 
-A simple wrapper for posting to slack.
+A simple wrapper of slack incoming webhooks in Ruby.
 
 ## Example
 ```ruby
