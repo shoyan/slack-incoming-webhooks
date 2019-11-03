@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = "slack-incoming-webhooks"
   spec.version       = Slack::Incoming::Webhooks::VERSION
   spec.authors       = ["Shohei Yamasaki"]
-  spec.email         = ["s-yamasaki@pepabo.com"]
+  spec.email         = ["yamasaki0406@gmail.com"]
 
   spec.summary       = %q{A simple wrapper for posting to slack.}
   spec.description   = %q{A simple wrapper for posting to slack.}
